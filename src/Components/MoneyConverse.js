@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 
+import {API_KEY} from "../AppConfig";
 import StoreContext from "../Context/Store";
 
-const API_KEY = "ZHYrThzSzLsVmMXztw3iXAqa65CXzozpvI7hQTFt";
 const CONV_URL = `https://api.currencyapi.com/v3/latest?apikey=`;
 
 const millisecInADay = 86400000;
