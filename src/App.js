@@ -43,19 +43,15 @@ const App = () => {
       .then(
         (result) => {
           setIsLoaded(true);
-          loadProducts([...result, ...testProducts])
+          loadProducts([...result])  //  , ...testProducts
         },
         (error) => {
           setIsLoaded(true);
-          // setError(error);
+          setError(error);
           loadProducts(testProducts);
         }
       );
   }, []);
-
-  const updateAvailableCurrencies = (currArr) => {
-    dispatch({ type: "SET_AVAILABLE_CURRENCIES", data: currArr });
-  };
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -79,11 +75,3 @@ const App = () => {
 };
 
 export default App;
-
-// return (
-//   <div>
-//     <h1>Checkout page</h1>
-//     <Products />
-//     <ShoppingCart />
-//   </div>
-// );

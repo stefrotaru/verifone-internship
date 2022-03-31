@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import {API_KEY} from "../AppConfig";
 import StoreContext from "../Context/Store";

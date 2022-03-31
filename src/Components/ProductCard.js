@@ -11,19 +11,18 @@ const ProductCard = ({ product }) => {
 
   const clickHandler = (e) => {
     e.preventDefault();
-    console.log(product.quantity)
     dispatch({type: "ADD_TO_CART", id: product.id});
     dispatch({type: "UPDATE_TOTAL"});
   };
 
   return (
-    <div className="product-card shadow-1">
+    <div className="product-card">
 
       <h2>{product.name}</h2>
       <div className="flex">
         <span className="product-card-price">Price: {roundToDecimals(product.price * ratio)} {store.currencyData.shortSymbol}</span>
       </div>
-      <button className="f6 link dim br3 ph3 pv2 mb dib white bg-dark-green" onClick={clickHandler}>Add to cart</button>
+      <button className="product-card-button ph3 pv2 white" onClick={clickHandler}>Add to cart</button>
 
     </div>
   );
