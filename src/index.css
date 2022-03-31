@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --light-gray: #ebeef4
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.root {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.product-card-price {
+    margin: auto;
+}
+
+.quantity-no {
+    border: none;
+    text-decoration: none;
+    text-align: right;
+    width: 4rem;
+}
+
+.shopping-cart {
+    background-color: var(--light-gray);
+    box-shadow: inset 0px 0px 6px 0px rgba(117, 114, 114, 0.836);
+    width: 35%;
+}
+
+.table-cart {
+    margin: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-cart tr {
+    height: 2rem;
+    width: 100%;
+}
+
+.table-cart tr > td:nth-child(1) {
+    width: 30%;
+}
+
+.table-cart tr > td:nth-child(2) {
+    width: 10%;
+}
+
+.table-cart tr > td:nth-child(3) {
+    width: 25%;
+}
+
+.table-cart tr > td:nth-child(4) {
+    width: 10%;
+}
+
+
+.cart-item {
+    display: inline-flex;
+}
+
+.centered-div{
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.body-div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.product-list {
+    width: 65%;
 }
