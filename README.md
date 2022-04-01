@@ -1,0 +1,5 @@
+I've created this responsive app using ReactJs and Boostrap(v5.1). Fetching product information from a given API and rendering them in order according to their prices. Using a second API of my choice (currencyapi), prices can be converted into USD/EUR/GBP/RON values. Using react hooks (state, reducer, context, effect) but also making good use of the local storage, products can be added in a shopping cart where the user can convert the prices into their desired currency. When converting a price to a different currency, the conversion rate will be stored for 24 hours into the local storage, this way minimizing the number of (currencyapi) calls. The styling of the page is according to the mockups received with the assignment.
+
+Unfortunately, I wasn’t able to deploy the app with gh-pages, from what the console shows me, because the call to the products API is made through a http request instead of https.
+
+Hope you’ll like my project!
