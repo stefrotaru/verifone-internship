@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/verifone-internship/static/css/main.0238c2bb.css",
+    "main.js": "/verifone-internship/static/js/main.4f60d450.js",
+    "index.html": "/verifone-internship/index.html",
+    "main.0238c2bb.css.map": "/verifone-internship/static/css/main.0238c2bb.css.map",
+    "main.4f60d450.js.map": "/verifone-internship/static/js/main.4f60d450.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0238c2bb.css",
+    "static/js/main.4f60d450.js"
+  ]
+}
