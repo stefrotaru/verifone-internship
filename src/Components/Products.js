@@ -6,7 +6,7 @@ const Products = () => {
   const { store } = useContext(StoreContext);
 
   return (
-    <div className="product-list">
+    <div >
       {store.items.length > 0 && store.items
           .sort((itemA, itemB) => itemA.price - itemB.price)
           .map((item, i) => {
