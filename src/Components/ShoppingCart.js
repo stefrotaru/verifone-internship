@@ -5,6 +5,9 @@ import CartItem from "./CartItem";
 import StoreContext from "../Context/Store";
 import roundToDecimals from "../Utils/roundToDecimals";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+
 const ShoppingCart = () => {
   const { store, dispatch } = useContext(StoreContext);
 
@@ -16,6 +19,7 @@ const ShoppingCart = () => {
     dispatch({ type: "CLEAR_CART" });
     dispatch({ type: "UPDATE_TOTAL" });
   };
+
   return (
     <div className="shopping-cart">
       <div className="shopping-cart-inside">
@@ -38,14 +42,24 @@ const ShoppingCart = () => {
             </tbody>
           </table>
         )}
+        {cartItems.length > 0 && <hr className="shopping-cart-total-hr"></hr>}
         {cartItems.length > 0 && (
           <p>
             Total: {roundToDecimals(total * ratio)} {currencyData.shortSymbol}
           </p>
         )}
         <MoneyConverse />
+        {cartItems.length > 1 && (
+          <Button variant="danger" onClick={clearCartHandler}>
+            Clear Cart
+          </Button>
+        )}
         {cartItems.length > 0 && (
-          <button onClick={clearCartHandler}>Clear Cart</button>
+          <div className="d-grid gap-2">
+            <Button variant="success" size="lg">
+              Continue
+            </Button>
+          </div>
         )}
       </div>
     </div>

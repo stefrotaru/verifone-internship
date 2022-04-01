@@ -6,6 +6,9 @@ import ShoppingCart from "./Components/ShoppingCart";
 import StoreContext, { store as initialStore } from "./Context/Store";
 import storeReducer from "./Reducers/storeReducer";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
+
 const testProducts = [
   {
     id: 100,
@@ -42,7 +45,7 @@ const App = () => {
       .then(
         (result) => {
           setIsLoaded(true);
-          loadProducts([...result])  //  , ...testProducts
+          loadProducts([...result]); //  , ...testProducts
         },
         (error) => {
           setIsLoaded(true);
@@ -58,18 +61,28 @@ const App = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <StoreContext.Provider value={{ store, dispatch }}>
-        <div className="centered-div">
-          <div className="header-div">
-            <h1>Checkout page</h1>
-            <hr className="checkout-page-hr"></hr>
+      <ThemeProvider
+        breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+      >
+        <StoreContext.Provider value={{ store, dispatch }}>
+          <div className="centered-div">
+            <div className="header-div">
+              <h1>Checkout page</h1>
+              <hr className="checkout-page-hr"></hr>
+            </div>
+            <div class="container" className="body-div">
+              <div class="row row-cols-auto">
+                <div class="col">
+                  <Products />
+                </div>
+                <div class="col">
+                  <ShoppingCart />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="body-div">
-            <Products />
-            <ShoppingCart />
-          </div>
-        </div>
-      </StoreContext.Provider>
+        </StoreContext.Provider>
+      </ThemeProvider>
     );
   }
 };
