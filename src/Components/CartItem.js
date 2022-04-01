@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
+
 import StoreContext from "../Context/Store";
 import roundToDecimals from "../Utils/roundToDecimals";
 
 const CartItem = ({ item, index }) => {
   const { store, dispatch } = useContext(StoreContext);
+  const {ratio} = store.currencyData;
 
   let quantityNo = store.cartItems.find( prod => item.id === prod.id ).quantity;
 
@@ -23,7 +25,7 @@ const CartItem = ({ item, index }) => {
       <td>
         <input className="quantity-no" type="number" value={quantityNo} onChange={onChangeHandler} />
       </td>
-      <td>{roundToDecimals(item.price * quantityNo)}{store.currencyData.shortSymbol}</td>
+      <td>{roundToDecimals(item.price * quantityNo * ratio)}{store.currencyData.shortSymbol}</td>
       <td>
         <button onClick={removeFromCartHandler}>x</button>
       </td>

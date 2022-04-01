@@ -133,8 +133,7 @@ const MoneyConverse = () => {
 
   return (
     <div>
-      <label>Choose currency: {currencies[currencyValue].label}</label>
-
+      <label>Choose currency: </label>
       <select
         value={currencyValue}
         onChange={currencyChangeHandler}

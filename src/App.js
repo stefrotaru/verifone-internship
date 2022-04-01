@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useReducer } from "react";
 
 import { PRODUCTS_API } from "./AppConfig";
-import "tachyons";
 import Products from "./Components/Products";
 import ShoppingCart from "./Components/ShoppingCart";
 import StoreContext, { store as initialStore } from "./Context/Store";
@@ -63,6 +62,7 @@ const App = () => {
         <div className="centered-div">
           <div className="header-div">
             <h1>Checkout page</h1>
+            <hr className="checkout-page-hr"></hr>
           </div>
           <div className="body-div">
             <Products />
